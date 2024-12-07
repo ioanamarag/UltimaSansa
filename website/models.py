@@ -7,7 +7,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
 
-class BonClick(db.Model):
+class Bon(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -29,6 +29,7 @@ class Promotion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(200))
     promo_type = db.Column(db.String(50))
+    price = db.Column(db.Numeric(10, 2))
     e1 = db.Column(db.Integer)
     e2 = db.Column(db.Integer)
     e3 = db.Column(db.Integer)
