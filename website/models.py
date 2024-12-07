@@ -23,6 +23,7 @@ class BonClick(db.Model):
     c2 = db.Column(db.Integer)
     c3 = db.Column(db.Integer)
     c4 = db.Column(db.Integer)
+    c5 = db.Column(db.Integer)
 
 class Promotion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
