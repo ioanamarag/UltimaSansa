@@ -7,35 +7,36 @@
   <div class="gallery-container">
     <div class="row">
       {% for image in images %}
-      <div class="col-md-4 gallery-item afisare">
-        <div class="image-container">
-          <img src="{{ url_for('static', filename=image) }}" alt="Image" class="img-fluid">
-        </div>
-        <button type="button" class="btn btn-info btn-lg mt-2" data-toggle="modal" data-target="#myModal">Vezi detalii</button>
-      
-        <!-- Modal -->
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Reduceri Speciale!</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p>Profitați de reduceri de până la <strong>50%</strong> la produsele selectate! Oferta este valabilă doar până la sfârșitul săptămânii.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="col-md-4 gallery-item afisare">
+          <div class="image-container">
+            <img src="{{ url_for('static', filename=image[1]) }}" alt="Image" class="img-fluid">
+          </div>
+          <button type="button" class="btn btn-info btn-lg mt-2" data-toggle="modal" data-target="#myModal{{ loop.index }}">
+            Vezi detalii
+          </button>
+        
+          <!-- Modal with unique ID -->
+          <div id="myModal{{ loop.index }}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!-- Use image[0] to set the modal title dynamically -->
+                  <h4 class="modal-title">Reduceri Speciale {{ image[0] }}!</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <!-- You can adjust the content for each modal as needed -->
+                  <p>Profitați de reducerea de <strong>{{ image[2] }} %</strong>! Oferta este valabilă doar până la sfârșitul săptămânii.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-      
+        </div>
       {% endfor %}
     </div>
   </div>
 {% endblock %}
-
