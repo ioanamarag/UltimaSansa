@@ -80,7 +80,7 @@
 .modal-header {
   background-color: #ff4d4d; /* Roșu puternic */
   color: white;
-  border-top-left-radius: 20px;
+  webkit-border-top-right-radius: 20px;
   border-bottom: 2px solid #ff9999; /* Subtilitate la marginea de jos */
   text-align: center;
 }
@@ -121,3 +121,28 @@
 .modal-footer .btn-default:hover {
   background-color: #45a049; /* Ușor mai întunecat la hover */
 }
+
+
+/* Stiluri pentru containerul de preț */
+.price-container {
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+/* Prețul vechi (stricat) */
+.price-old {
+  text-decoration: line-through;
+  color: red;
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Prețul nou (cu reducere) */
+.price-new {
+  color: green;
+  font-size: 30px;
+  font-weight: bold;
+}
+
