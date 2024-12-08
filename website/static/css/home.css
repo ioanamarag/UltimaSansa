@@ -18,8 +18,8 @@
 }
 
 .image-container {
-  width: 100%; /* Lățimea să se potrivească cu containerul */
-  height: 300px; /* Înălțime fixă pentru imagini */
+  width: 100%; /* Lățimea containerului */
+  height: 300px; /* Înălțimea containerului poate fi setată sau adaptată la nevoile tale */
   overflow: hidden; /* Ascunde partea care depășește containerul */
   display: flex;
   justify-content: center;
@@ -30,9 +30,9 @@
 }
 
 .image-container img {
-  width: auto;
-  height: auto;
-  object-fit: cover; /* Imaginea acoperă containerul fără deformare */
+  width: 100%; /* Imaginea va ocupa toată lățimea containerului */
+  height: auto; /* Păstrează proporțiile imaginii */
+  object-fit: contain; /* Imaginea se va potrivi în întregime, fără a o tăia */
 }
 
 .logo {
@@ -44,5 +44,5 @@
 
 /* Mută butonul de Logout la stânga */
 .logoutbutton {
-  padding-right: 1000px; 
+  padding-right: 1000px;
 }
