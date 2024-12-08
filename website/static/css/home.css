@@ -11,28 +11,46 @@
   padding: 15px; /* Spațiu intern */
   margin: 10px 0; /* Spațiu extern între rânduri */
   border: 2px solid lightgray; /* Chenar gri */
-  border-radius: 8px; /* Colțuri rotunjite */
+  border-radius: 15px; /* Colțuri rotunjite */
   background-color: #f9f9f9; /* Fundal gri deschis */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră ușoară */
   text-align: center; /* Aliniere centrală a conținutului */
 }
 
 .image-container {
-  width: 100%; /* Lățimea containerului */
-  height: 300px; /* Înălțimea containerului poate fi setată sau adaptată la nevoile tale */
-  overflow: hidden; /* Ascunde partea care depășește containerul */
+  width: 230px; /* Lățimea containerului */
+  height: 300px; /* Înălțimea containerului */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Permite plasarea elementelor unul sub altul */
+  justify-content: space-between; /* Aliniere a elementelor pentru a ocupa întreaga înălțime */
+  align-items: center; /* Centrează elementele pe orizontală */
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
+  overflow: hidden; /* Ascunde orice parte a imaginii care depășește containerul */
 }
 
 .image-container img {
   width: 100%; /* Imaginea va ocupa toată lățimea containerului */
-  height: auto; /* Păstrează proporțiile imaginii */
-  object-fit: contain; /* Imaginea se va potrivi în întregime, fără a o tăia */
+  height: 80%; /* Imaginea va ocupa 80% din înălțimea containerului */
+  object-fit: contain; /* Imaginea se va potrivi complet în container fără a fi tăiată */
+  display: block; /* Împiedică orice spațiu suplimentar de sub imagine */
+  margin-top: 20px;
+}
+
+.image-container button {
+  width: 100%; /* Butonul va ocupa toată lățimea containerului */
+  padding: 10px 0; /* Adaugă spațiu în jurul butonului */
+  background-color: #4caf50; /* Culoare verde pentru buton */
+  color: white; /* Culoare albă pentru textul butonului */
+  border: none; /* Elimină bordura implicită */
+  border-radius: 8px; /* Colțuri rotunjite */
+  cursor: pointer; /* Cursorul devine mâna când treci cu mouse-ul peste buton */
+  text-align: center; /* Centrează textul în buton */
+}
+
+.image-container button:hover {
+  background-color: #45a049; /* Ușor mai închisă la hover */
 }
 
 .logo {
@@ -42,7 +60,52 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: umbră ușoară */
 }
 
-/* Mută butonul de Logout la stânga */
-.logoutbutton {
-  padding-right: 1000px;
+.modal-content {
+  background: linear-gradient(135deg, #ff4d4d, #ff9999); /* Fundal roșu gradient */
+  border: 2px solid #d4d4d4; /* Chenar subtil */
+  border-radius: 12px; /* Colțuri rotunjite */
+  color: white; /* Text alb pentru contrast */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Umbră elegantă */
+}
+
+.modal-header {
+  background-color: #ff4d4d; /* Roșu puternic */
+  color: white;
+  border-bottom: 2px solid #ff9999; /* Subtilitate la marginea de jos */
+  text-align: center;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: 0.8; /* Buton de închidere subtil */
+}
+
+.modal-body {
+  background-color: #f5fff5; /* Verde deschis pentru contrast */
+  color: #333; /* Text întunecat pentru lizibilitate */
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+
+.modal-footer {
+  background-color: #ff4d4d; /* Roșu pentru footer */
+  border-top: 2px solid #ff9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer .btn-default {
+  background-color: #4caf50; /* Verde deschis pentru buton */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer .btn-default:hover {
+  background-color: #45a049; /* Ușor mai întunecat la hover */
 }
